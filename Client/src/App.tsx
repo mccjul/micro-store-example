@@ -1,23 +1,20 @@
 import React, { Component } from "react";
+import Header from "./components/Header";
 import "./App.css";
+
+import { Router } from "@reach/router";
+import Cart from "./pages/Cart";
+import Shop from "./pages/Shop";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <Router>
+          <Cart path="cart" />
+          <Shop path="/" />
+        </Router>
       </div>
     );
   }
