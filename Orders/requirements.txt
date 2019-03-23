@@ -1,1 +1,4 @@
-pyramid==1.7
+flask
+sqlalchemy
+flask_sqlalchemy
+psycopg2-binary
