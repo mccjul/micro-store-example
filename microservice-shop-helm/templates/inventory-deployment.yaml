@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: inventory
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: inventory
+        tier: backend
+    spec:
+      containers:
+      - env:
+        image: dethbug/microservice-shop-inventory:latest
+        name: inventory
+        ports:
+        - containerPort: 5000
+        resources: {}
+      restartPolicy: Always
+status: {}

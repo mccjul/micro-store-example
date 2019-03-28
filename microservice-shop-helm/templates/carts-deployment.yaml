@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: carts
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: carts
+        tier: backend
+    spec:
+      containers:
+      - env:
+        image: dethbug/microservice-shop-carts:latest
+        name: carts
+        ports:
+        - containerPort: 5002
+        resources: {}
+      restartPolicy: Always
+status: {}

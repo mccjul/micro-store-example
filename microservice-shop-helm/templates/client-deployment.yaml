@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: client
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: client
+        tier: frontend
+    spec:
+      containers:
+      - env:
+        image: dethbug/microservice-shop-client:latest
+        name: client
+        ports:
+        - containerPort: 80
+        resources: {}
+      restartPolicy: Always
+status: {}

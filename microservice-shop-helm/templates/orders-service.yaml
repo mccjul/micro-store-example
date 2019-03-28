@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders
+spec:
+  selector:
+    app: orders
+    tier: backend
+  ports:
+  - name: "orders"
+    protocol: TCP
+    port: 5001
+    targetPort: 5001
+status:
+  loadBalancer: {}
